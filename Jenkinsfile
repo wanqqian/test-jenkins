@@ -3,17 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "BUILD"
+                make build
             }
         }
-        stage('Test') {
+        stage('Push') {
             steps {
-                echo "TEST"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "DEPLOY"
+                make push
             }
         }
     }

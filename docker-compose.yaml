@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+
+  test-jenkins:
+    build:
+      context: .
+    container_name: test-jenkins
+    image: wqnice/test-ci:latest
+    restart: always
+    environment:
+    - WQ=NICE
+    ports:
+      - 5000:5000
