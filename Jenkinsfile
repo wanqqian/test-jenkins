@@ -1,15 +1,17 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh "make build"
-            }
-        }
-        stage('Push') {
-            steps {
-                sh "make push"
-            }
-        }
+  agent any
+  stages {
+    stage('Build') {
+      agent any
+      steps {
+        sh 'make build'
+      }
     }
+    stage('Push') {
+      agent any
+      steps {
+        sh 'make push'
+      }
+    }
+  }
 }
